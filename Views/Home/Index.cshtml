@@ -1,43 +1,39 @@
 ﻿@model IEnumerable<BookShop.Models.Book>
 
+
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Users Page";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-        <div class="row isotope-grid">
-            @foreach (var item in Model)
-            {
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-                    <!-- Block2 -->
-                <div class="block2">
-                        <div class="block2-pic hov-img0">
-                            <img src="@("~/img/" + item.ImgUrl)" asp-append-version="true" width="200px">
+@*Search form*@
+<form asp-controller="Book" asp-action="Index" method="get">
+			<input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search here..."  >
+			<input type="submit" value="Search" class="submit-search" asp-route-id="0" >            
+            <a asp-action="Index">Back to Full List</a>
+		</form>
 
 
-                            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Isbn" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-                                 @item.Title
-                            </a>
-
-                        </div>
-
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                   
-                                <span class="stext-105 cl3">
-                                    @item.Price 
-                                   @* <a asp-action="AddToCart" asp-route-isbn="@Model[i].Isbn" class="btn btn-primary">Add to cart</a>*@
-                                </span>
-                            </div>                        
-                        </div>
-
-
-                    </div>
-                </div>                
-            }            
-        </div>
-
+    <div class="container">
+      <div class="row">
+          @foreach (var book in Model)
+          {
+              <div class="col-md-4 col-6">
+                  <div class="card" style="width: 18rem;">
+                      <img src="@("~/img/" + book.ImgUrl)" asp-append-version="true" class="card-img-top">
+                      <div class="card-body">
+                          <h5 class="card-title">@book.Title</h5>
+                          <h5 class="card-title">$@book.Price</h5>
+                
+                          <a asp-action="Details" asp-route-id="@book.Isbn" class="btn btn-primary">Detail</a>
+                          <a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@book.Isbn" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+              </div>
+          }
+      </div>
+  </div>
 
 
 
@@ -51,7 +47,7 @@
 			<li class="page-item @style" aria-current="page">
 				<a class="page-link" asp-action="Index"
 			   asp-route-id="@i"
-			   asp-route-searchString="@ViewData["CurrentFilter"]" >
+			   asp-route-searchString="@ViewData["CurrentFilter"]">
 					@(i+1)
 				</a>
 			</li>

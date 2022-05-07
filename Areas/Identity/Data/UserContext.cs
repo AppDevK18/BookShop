@@ -11,6 +11,7 @@ public class UserContext : IdentityDbContext<BookShopUser>
     public UserContext(DbContextOptions<UserContext> options)
         : base(options)
     {
+
     }
 
     public DbSet<Book> Books { get; set; }
