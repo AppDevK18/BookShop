@@ -9,29 +9,61 @@ using Microsoft.EntityFrameworkCore;
 using BookShop.Areas.Identity.Data;
 using BookShop.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
-namespace BookShop.Controllers
+namespace BookShop.Areas.Seller.Controllers
 {
-    public class BookController : Controller
+    [Area("Seller")]
+    [Authorize(Roles = "Seller")]
+    public class BooksController : Controller
     {
         private readonly UserContext _context;
         private readonly UserManager<BookShopUser> _userManager;
+        private readonly int _recordsPerPage = 5;
 
-        public BookController(UserContext context, UserManager<BookShopUser> userManager)
+
+
+        public BooksController(UserContext context, UserManager<BookShopUser> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
 
-        // GET: Book
-        public async Task<IActionResult> Index()
-        {
-            var userContext = _context.Books.Include(b => b.Category).Include(b => b.User);
-            return View(await userContext.ToListAsync());
-        }
 
-        // GET: Book/Details/5
-        public async Task<IActionResult> Details(string id)
+		public async Task<IActionResult> Index( int id = 0, string searchString = "")
+		{
+			
+			ViewData["CurrentFilter"] = searchString;
+			
+			var userid = _userManager.GetUserId(HttpContext.User);
+			var books = from b in _context.Books
+						select b;
+
+			ViewBag.CurrentPage = id;
+
+
+
+            books = books.Include(b => b.Category)
+                     .Include(b => b.User)
+                     .Where(c => c.UId == userid)
+                     .Where(b => b.Title.Contains(searchString));
+						
+
+				List<Book> booksList = await books.Skip(id * _recordsPerPage)
+				   .Take(_recordsPerPage).ToListAsync();
+				int numOfFilteredBook = books.Count();
+				ViewBag.NumberOfPages = (int)Math.Ceiling((double)numOfFilteredBook / _recordsPerPage);
+
+
+				return View(booksList);
+			
+
+			
+		}
+
+
+		// GET: Seller/Books/Details/5
+		public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -50,24 +82,24 @@ namespace BookShop.Controllers
             return View(book);
         }
 
-        // GET: Book/Create
+        // GET: Seller/Books/Create
         public IActionResult Create()
         {
+
             var userid = _userManager.GetUserId(HttpContext.User);
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             ViewData["Id"] = _context.Users.Where(c => c.Id == userid).FirstOrDefault().UserName;
             return View();
         }
 
-        // POST: Book/Create
+        // POST: Seller/Books/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Isbn,Title,Pages,Author,Price,Desc,ImgUrl,CategoryId")] Book book, IFormFile image)
         {
-            var userid = _userManager.GetUserId(HttpContext.User);
-
+           
             if (image != null)
             {
                 string imgName = book.Isbn + Path.GetExtension(image.FileName);
@@ -82,7 +114,7 @@ namespace BookShop.Controllers
             {
                 return View(book);
             }
-
+            var userid = _userManager.GetUserId(HttpContext.User);
             if (ModelState.IsValid)
             {
                 book.UId = userid;
@@ -95,7 +127,7 @@ namespace BookShop.Controllers
             return View(book);
         }
 
-        // GET: Book/Edit/5
+        // GET: Seller/Books/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -108,12 +140,12 @@ namespace BookShop.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Id", book.CategoryId);
-            ViewData["UId"] = new SelectList(_context.Users, "Id", "Id", book.UId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", book.CategoryId);
+            ViewData["UId"] = new SelectList(_context.Users, "Id", "UserName", book.UId);
             return View(book);
         }
 
-        // POST: Book/Edit/5
+        // POST: Seller/Books/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -150,7 +182,7 @@ namespace BookShop.Controllers
             return View(book);
         }
 
-        // GET: Book/Delete/5
+        // GET: Seller/Books/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -170,7 +202,7 @@ namespace BookShop.Controllers
             return View(book);
         }
 
-        // POST: Book/Delete/5
+        // POST: Seller/Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

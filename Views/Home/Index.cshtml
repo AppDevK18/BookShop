@@ -1,8 +1,60 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<BookShop.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+        <div class="row isotope-grid">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                    <!-- Block2 -->
+                <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="@("~/img/" + item.ImgUrl)" asp-append-version="true" width="200px">
+
+
+                            <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Isbn" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+                                 @item.Title
+                            </a>
+
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                   
+                                <span class="stext-105 cl3">
+                                    @item.Price 
+                                   @* <a asp-action="AddToCart" asp-route-isbn="@Model[i].Isbn" class="btn btn-primary">Add to cart</a>*@
+                                </span>
+                            </div>                        
+                        </div>
+
+
+                    </div>
+                </div>                
+            }            
+        </div>
+
+
+
+
+
+
+<nav aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+		@for (var i = 0; i < ViewBag.NumberOfPages; i++)
+		{
+			var style = (ViewBag.CurrentPage == @i) ? "active" : "";
+			<li class="page-item @style" aria-current="page">
+				<a class="page-link" asp-action="Index"
+			   asp-route-id="@i"
+			   asp-route-searchString="@ViewData["CurrentFilter"]" >
+					@(i+1)
+				</a>
+			</li>
+		}
+	</ul>
+</nav>

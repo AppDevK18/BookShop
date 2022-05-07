@@ -12,7 +12,7 @@ namespace BookShop.Models
         public string Author { get; set; }
         public int Price { get; set; }
         public string Desc { get; set; }
-        public string ImgUrl { get; set; }
+        public string? ImgUrl { get; set; }
         public int CategoryId { get; set; }
         public virtual Category? Category { get; set; }
         public string? UId { get; set; }

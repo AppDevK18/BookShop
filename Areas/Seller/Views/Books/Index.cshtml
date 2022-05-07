@@ -1,0 +1,113 @@
+﻿@model IEnumerable<BookShop.Models.Book>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Areas/Seller/Views/Shared/_LayoutSeller.cshtml";
+}
+
+<h1>Index</h1>
+
+
+
+
+<div class="m-b-10">
+	<form asp-action="Index" method="get">
+		<input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" style="min-width: 100%;" placeholder="Search" />
+		<input type="submit" value="Search" class="btn btn-primary mt-3" asp-route-id="0" asp-route-searchString="@ViewData["CurrentFilter"]" style="min-width: 100%;" />
+	</form>
+</div>
+
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+
+
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Title)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Pages)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Author)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Price)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Desc)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.ImgUrl)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Category)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.User)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+
+				<td>
+					@Html.DisplayFor(modelItem => item.Title)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Pages)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Author)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Price)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Desc)
+				</td>
+				<td>
+					<img src="@("~/img/" + item.ImgUrl)" asp-append-version="true" style="max-width: 200px" alt="">
+
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Category.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.User.UserName)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Isbn">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.Isbn">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.Isbn">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+		@for (var i = 0; i < ViewBag.NumberOfPages; i++)
+		{
+			var style = (ViewBag.CurrentPage == @i) ? "active" : "";
+			<li class="page-item @style" aria-current="page">
+				<a class="page-link" asp-action="Index"
+			   asp-route-id="@i"
+			   asp-route-searchString="@ViewData["CurrentFilter"]" >
+					@(i+1)
+				</a>
+			</li>
+		}
+	</ul>
+</nav>
