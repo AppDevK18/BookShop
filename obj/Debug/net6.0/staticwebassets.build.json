@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ncgu4pJLFpvaASGRdPR/gXXxCYMbV7YshKOY0Zyi7gI=",
+  "Hash": "iVtWQNI25BCMheXQOAHrGE/3Zce94pSL8QSHW9LwPQY=",
   "Source": "BookShop",
   "BasePath": "_content/BookShop",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BookShop.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\css\\BackToLogin.css",
+      "SourceId": "BookShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\",
+      "BasePath": "_content/BookShop",
+      "RelativePath": "css/BackToLogin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BackToLogin.css"
+    },
+    {
       "Identity": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\css\\sb-admin-2.css",
       "SourceId": "BookShop",
       "SourceType": "Discovered",
@@ -1171,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\12212.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\img\\199966.jpg",
+      "SourceId": "BookShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\",
+      "BasePath": "_content/BookShop",
+      "RelativePath": "img/199966.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\199966.jpg"
     },
     {
       "Identity": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\img\\44.png",
@@ -1358,6 +1392,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\sb-admin-2.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\js\\Search.js",
+      "SourceId": "BookShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\",
+      "BasePath": "_content/BookShop",
+      "RelativePath": "js/Search.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Search.js"
     },
     {
       "Identity": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\wwwroot\\js\\site.js",

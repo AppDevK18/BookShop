@@ -4,8 +4,33 @@
     ViewData["Title"] = "Access denied";
 }
 
-<header>
+@*<header>
     <h1 class="text-danger">@ViewData["Title"]</h1>
     <p class="text-danger">You do not have access to this resource.</p>
     <a asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">Logout</a>
 </header>
+*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    Sorry, You must login by seller's account</h2>
+        
+                <div class="error-actions">
+                  @*  <a asp-controller="Home" asp-action="Index" asp-area="Seller" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a>*@
+
+                        
+                        <a  id="register" asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary btn-lg"><span>Register new account for seller</span>  </a>
+
+                      
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

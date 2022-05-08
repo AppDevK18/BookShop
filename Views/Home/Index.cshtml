@@ -2,38 +2,43 @@
 
 
 @{
-    ViewData["Title"] = "Users Page";
+	ViewData["Title"] = "Users Page";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
+<script src="/js/Search.js">
+</script>
+
 @*Search form*@
-<form asp-controller="Book" asp-action="Index" method="get">
-			<input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search here..."  >
-			<input type="submit" value="Search" class="submit-search" asp-route-id="0" >            
-            <a asp-action="Index">Back to Full List</a>
-		</form>
+<form asp-controller="Home" asp-action="Index" method="get">
+	<input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search here...">
+	<input type="submit" value="Search" class="submit-search" asp-route-id="0">
+	<a asp-action="Index">Back to Full List</a>
+</form>
 
 
-    <div class="container">
-      <div class="row">
-          @foreach (var book in Model)
-          {
-              <div class="col-md-4 col-6">
-                  <div class="card" style="width: 18rem;">
-                      <img src="@("~/img/" + book.ImgUrl)" asp-append-version="true" class="card-img-top">
-                      <div class="card-body">
-                          <h5 class="card-title">@book.Title</h5>
-                          <h5 class="card-title">$@book.Price</h5>
-                
-                          <a asp-action="Details" asp-route-id="@book.Isbn" class="btn btn-primary">Detail</a>
-                          <a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@book.Isbn" class="btn btn-primary">Add to cart</a>
-                      </div>
-                  </div>
-              </div>
-          }
-      </div>
-  </div>
+
+
+<div class="container">
+	<div class="row">
+		@foreach (var book in Model)
+		{
+			<div class="col-md-4 col-6">
+				<div class="card" style="width: 18rem;">
+					<img src="@("~/img/" + book.ImgUrl)" asp-append-version="true" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">@book.Title</h5>
+						<h5 class="card-title">$@book.Price</h5>
+
+						<a asp-action="Details" asp-route-id="@book.Isbn" class="btn btn-primary">Detail</a>
+						<a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@book.Isbn" class="btn btn-primary">Add to cart</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>
 
 
 
@@ -54,3 +59,4 @@
 		}
 	</ul>
 </nav>
+

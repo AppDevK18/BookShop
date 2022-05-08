@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">*@
+<link href="~/css/BackToLogin.css" rel="stylesheet" >
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    Sorry, You must login to shopping!</h2>
+        
+                <div class="error-actions">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a><a  id="register" asp-area="Identity" asp-page="/Account/Register" class="btn btn-default btn-lg"><span>Register new account</span>  </a>
+
+                      
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
