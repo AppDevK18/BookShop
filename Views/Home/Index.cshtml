@@ -2,55 +2,93 @@
 
 
 @{
-    ViewData["Title"] = "Users Page";
+	ViewData["Title"] = "Users Page";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-@*Search form*@
-<form asp-controller="Book" asp-action="Index" method="get">
-			<input type="search" name="SearchString" value="@ViewData["CurrentFilter"]" placeholder="Search here..."  >
-			<input type="submit" value="Search" class="submit-search" asp-route-id="0" >            
-            <a asp-action="Index">Back to Full List</a>
-		</form>
+
+<!-- khối sản phẩm  -->
+<section class="content my-4">
+	<div class="container">
+		<div class="noidung bg-white" style=" width: 100%;">
+			<!-- header của khối sản phẩm : tag(tác giả), bộ lọc và sắp xếp  -->
+			<div class="header-khoi-sp d-flex">
+				<div class="sort d-flex ml-auto">
+					<div class="sap-xep">
+						<form asp-action="Index"  method="get" >
+						<label for="sapxep-select" class="label-select">Categories</label>
+						<select  type="number"  asp-items="ViewBag.CategoryId" name="categoryInt" value="@ViewData["CurrentCategories"]" class="custom-select" asp-items="ViewBag.CategoryId">
+						</select>
+						 <input type="submit" value="Filter" class="btn btn-primary mt-3" style="min-width: 100%;" asp-route-id="0" asp-route-categoryInt="@ViewData["CurrentCategories"]" />
+					</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- các sản phẩm  -->
+			<div class="items">
+				<div class="row">
 
 
-    <div class="container">
-      <div class="row">
-          @foreach (var book in Model)
-          {
-              <div class="col-md-4 col-6">
-                  <div class="card" style="width: 18rem;">
-                      <img src="@("~/img/" + book.ImgUrl)" asp-append-version="true" class="card-img-top">
-                      <div class="card-body">
-                          <h5 class="card-title">@book.Title</h5>
-                          <h5 class="card-title">$@book.Price</h5>
-                
-                          <a asp-action="Details" asp-route-id="@book.Isbn" class="btn btn-primary">Detail</a>
-                          <a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@book.Isbn" class="btn btn-primary">Add to cart</a>
-                      </div>
-                  </div>
-              </div>
-          }
-      </div>
-  </div>
+					@foreach (var book in Model)
+					{
+						<div class="col-lg-3 col-md-4 col-xs-6 item DeanGraziosi">
+							<div class="card ">
+								<a asp-controller="Books" asp-action="Details" asp-route-id="@book.Isbn" class="motsanpham"
+							   style="text-decoration: none; color: black;" data-toggle="tooltip"
+							   data-placement="bottom" title="Lập Kế Hoạch Kinh Doanh Hiệu Quả">
+									<img class="card-img-top anh" src="@("~/img/" + book.ImgUrl)" asp-append-version="true" class="card-img-top">
+									<div class="card-body noidungsp mt-3">
+										<h6 class="card-title ten">@book.Title</h6>
+										<small class="tacgia text-muted">@book.Author</small>
+										<div class="gia d-flex align-items-baseline">
+											<div class="giamoi">@book.Price ₫</div>
+										</div>
+									</div>
+								</a>
+									<a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@book.Isbn" class="btn btn-primary">Add to cart</a>
+							</div>
+					
+						</div>
+
+					}
+
+
+				</div>
+			</div>
+
+			<!-- pagination bar -->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					@for (var i = 0; i < ViewBag.NumberOfPages; i++)
+					{
+						var style = (ViewBag.CurrentPage == @i) ? "active" : "";
+						<li class="page-item @style" aria-current="page">
+							<a class="page-link" asp-action="Index"
+						   asp-route-id="@i"
+						   asp-route-searchString="@ViewData["CurrentFilter"]"  asp-route-categoryInt="@ViewData["CurrentCategories"]" >
+								@(i+1)
+							</a>
+						</li>
+					}
+				</ul>
+			</nav>
+
+			<!--het khoi san pham-->
+		</div>
+		<!--het div noidung-->
+	</div>
+	<!--het container-->
+</section>
+<!--het _1khoi-->
+
+	
 
 
 
 
 
-<nav aria-label="Page navigation example">
-	<ul class="pagination justify-content-center">
-		@for (var i = 0; i < ViewBag.NumberOfPages; i++)
-		{
-			var style = (ViewBag.CurrentPage == @i) ? "active" : "";
-			<li class="page-item @style" aria-current="page">
-				<a class="page-link" asp-action="Index"
-			   asp-route-id="@i"
-			   asp-route-searchString="@ViewData["CurrentFilter"]">
-					@(i+1)
-				</a>
-			</li>
-		}
-	</ul>
-</nav>
+
+
+

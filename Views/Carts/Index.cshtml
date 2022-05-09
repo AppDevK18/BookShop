@@ -5,54 +5,78 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
-	<a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+
+<!-- giao diện giỏ hàng  -->
+<section class="content my-3">
+	<div class="container">
+		<div class="cart-page bg-white">
+			<div class="row">
+				@*  <!-- giao diện giỏ hàng khi không có item  -->
+					<div class="col-12 cart-empty d-none">
+					<div class="py-3 pl-3">
+					<h6 class="header-gio-hang">GIỎ HÀNG CỦA BẠN <span>(0 sản phẩm)</span></h6>
+					<div class="cart-empty-content w-100 text-center justify-content-center">
+					<img src="images/shopping-cart-not-product.png" alt="shopping-cart-not-product">
+					<p>Chưa có sản phẩm nào trong giở hàng của bạn</p>
+					<a href="index.html" class="btn nutmuathem mb-3">Mua thêm</a>
+					</div>
+					</div>
+					</div>*@
+
+				<!-- giao diện giỏ hàng khi có hàng (phần comment màu xanh bên dưới là phần 2 sản phẩm trong giỏ hàng nhưng giờ đã demo bằng jquery) -->
+			<table class="table">
 	<thead>
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Quantity)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.TotalPerCart)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.User)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Book)
-			</th>
-			<th></th>
-		</tr>
+	<tr>
+	<th>
+	@Html.DisplayNameFor(model => model.Book)
+	</th>
+	<th>
+	@Html.DisplayNameFor(model => model.Quantity)
+	</th>
+	<th>
+	@Html.DisplayNameFor(model => model.TotalPerCart)
+	</th>
+	<th></th>
+	</tr>
 	</thead>
 	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.Quantity)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.TotalPerCart)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.User.UserName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Book.Title)
-				</td>
-				<td>
-					@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-					@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-					@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-				</td>
-			</tr>
-		}
+	@foreach (var item in Model)
+	{
+	<tr>
+	
+	<td>
+	<img class="card-img-top anh" src="@("~/img/" + item.Book.ImgUrl)" asp-append-version="true" style="max-width:100px;">
+	@Html.DisplayFor(modelItem => item.Book.Title)
+	</td>
+	<td>
+	@Html.DisplayFor(modelItem => item.Quantity)
+	</td>
+	<td>
+	@(item.Book.Price * item.Quantity)
+	</td>
+	
+	<td>
+		 <a class="btn btn-icon btn-hover btn-sm btn-rounded pull-right" asp-action="Edit" asp-route-uid="@item.UId" asp-route-bid="@item.BookIsbn">Edit</a>
+		 <a class="btn btn-icon btn-hover btn-sm btn-rounded pull-right"asp-action="Delete" asp-route-uid="@item.UId" asp-route-bid="@item.BookIsbn">Delete</a>
+	
+	</td>
+	</tr>
+	<hr />
+	}
 	</tbody>
-</table>
+	</table>
 
-<a asp-controller="Home" asp-action="Index">Back to Shop</a> |
-<a asp-controller="Carts" asp-action="Checkout">Checkout</a>
+	<h3>Total: @Model.Sum(c => c.Book.Price * c.Quantity)</h3>
+	
+	
+
+			</div>
+		</div>
+		<a style="text-decoration:none;" type="button" class="btn btn-danger" asp-controller="Carts" asp-action="Checkout">Checkout</a>
+	</div>
+	
+	<!-- het cart-page  -->
+	<!-- het container  -->
+</section>
+<!-- het khoi content  -->

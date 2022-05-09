@@ -10,7 +10,7 @@ namespace BookShop.Models
         public int Id { get; set; }
         public string UId { get; set; }
         public DateTime OrderDate { get; set; }
-        public double Total { get; set; }
+        public int Total { get; set; }
         public BookShopUser User { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
 

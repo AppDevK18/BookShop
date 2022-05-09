@@ -1,0 +1,76 @@
+﻿@model BookShop.Models.Book
+
+@{
+	ViewData["Title"] = "Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="product-page mb-4">
+	<div class="container">
+		<!-- chi tiết 1 sản phẩm -->
+		<div class="product-detail bg-white p-4">
+			<div class="row">
+				<!-- ảnh  -->
+				<div class="col-md-5 khoianh">
+					<div class="anhto mb-4">
+						
+							<img class="product-image" src="@("~/img/" + Model.ImgUrl)" asp-append-version="true" style="width: 100%;">
+						
+					</div>
+
+				</div>
+				<!-- thông tin sản phẩm: tên, giá bìa giá bán tiết kiệm, các khuyến mãi, nút chọn mua.... -->
+				<div class="col-md-7 ">
+					<dl class="row">
+						<dt class="col-sm-2">
+							@Html.DisplayNameFor(model => model.Title)
+						</dt>
+						<dd class="col-sm-10">
+							@Html.DisplayFor(model => model.Title)
+						</dd>
+						<dt class="col-sm-2">
+							@Html.DisplayNameFor(model => model.Pages)
+						</dt>
+						<dd class="col-sm-10">
+							@Html.DisplayFor(model => model.Pages)
+						</dd>
+						<dt class="col-sm-2">
+							@Html.DisplayNameFor(model => model.Author)
+						</dt>
+						<dd class="col-sm-10">
+							@Html.DisplayFor(model => model.Author)
+						</dd>
+						<dt class="col-sm-2">
+							@Html.DisplayNameFor(model => model.Price)
+						</dt>
+						<dd class="col-sm-10">
+							@Html.DisplayFor(model => model.Price)
+						</dd>
+						<dt class="col-sm-2">
+							@Html.DisplayNameFor(model => model.Desc)
+						</dt>
+						<dd class="col-sm-10">
+							@Html.DisplayFor(model => model.Desc)
+						</dd>
+						
+						
+						<dt class="col-sm-2">
+							@Html.DisplayNameFor(model => model.Category)
+						</dt>
+						<dd class="col-sm-10">
+							@Html.DisplayFor(model => model.Category.Name)
+						</dd>
+						
+						<a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@Model.Isbn" class="btn btn-primary">Add to cart</a>
+						
+					</dl>
+
+					
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	
+</section>

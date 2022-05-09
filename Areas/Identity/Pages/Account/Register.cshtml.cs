@@ -110,6 +110,11 @@ namespace BookShop.Areas.Identity.Pages.Account
             [Display(Name = "Your Role")]
             public string Role { get; set; }
 
+            [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Địa chỉ")]
+            public String Address { get; set; }
+
         }
 
 
@@ -126,6 +131,7 @@ namespace BookShop.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+                user.Address = Input.Address;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

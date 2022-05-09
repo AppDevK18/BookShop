@@ -110,7 +110,6 @@ namespace BookShop.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Pages")
@@ -184,8 +183,8 @@ namespace BookShop.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Total")
-                        .HasColumnType("float");
+                    b.Property<int>("Total")
+                        .HasColumnType("int");
 
                     b.Property<string>("UId")
                         .IsRequired()

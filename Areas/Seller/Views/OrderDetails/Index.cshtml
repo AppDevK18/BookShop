@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BookShop.Models.OrderDetail>
+
+@{
+    ViewData["Title"] = "Index";
+   Layout = "~/Areas/Seller/Views/Shared/_LayoutSeller.cshtml";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+              <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            
+              <th>
+                Total Price
+            </th>
+           
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.Order.Id)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Book.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @(item.Book.Price * item.Quantity)
+            </td>
+          
+           
+           
+        </tr>
+}
+
+
+    </tbody>
+</table>
+<h3>Tổng Tiền: @Model.Sum(c => c.Book.Price * c.Quantity)</h3>

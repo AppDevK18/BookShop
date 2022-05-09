@@ -87,28 +87,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXEJvb2tzXHJlcXVlc3RMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Categories/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXENhdGVnb3JpZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Categories/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXENhdGVnb3JpZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Categories/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXENhdGVnb3JpZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Categories/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXENhdGVnb3JpZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXENhdGVnb3JpZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/OrderDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyRGV0YWlsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/OrderDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyRGV0YWlsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/OrderDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyRGV0YWlsc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/OrderDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyRGV0YWlsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/OrderDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyRGV0YWlsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Orders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Orders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXE9yZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Shared/Error.cshtml]
@@ -131,16 +151,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Carts/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Books/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Carts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Carts/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Carts/Edit.cshtml]
@@ -151,48 +167,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Carts/Invoice.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW52b2ljZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Category/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Category/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Category/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Category/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Category/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Home/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Home/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Home/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Home/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/OrderDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Shared/Error.cshtml]
@@ -218,6 +202,14 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Shared/_LayoutSeller.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXFNoYXJlZFxfTGF5b3V0U2VsbGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-owskicfut6
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Areas/Seller/Views/Shared/_tLayoutSeller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXFNoYXJlZFxfdExheW91dFNlbGxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-yr7hdq05up
+
+[C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Shared/_Layout - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQgLSBDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-w5rrrwyonb
 
 [C:/Users/Ozer/Desktop/BookShop/BookShop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

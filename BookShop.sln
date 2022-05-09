@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShop", "BookShop.csproj", "{29D310DF-F265-4561-B639-7E533BA75BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShop", "BookShop.csproj", "{29D310DF-F265-4561-B639-7E533BA75BE7}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FPTBOOK", "..\..\..\source\repos\FPTBOOK\FPTBOOK.sqlproj", "{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{29D310DF-F265-4561-B639-7E533BA75BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29D310DF-F265-4561-B639-7E533BA75BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29D310DF-F265-4561-B639-7E533BA75BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F7AE93-A1BA-4879-AD53-B2E5EAD3E704}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
