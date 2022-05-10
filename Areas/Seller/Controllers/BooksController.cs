@@ -173,11 +173,22 @@ namespace BookShop.Areas.Seller.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Isbn,Title,Pages,Author,Price,Desc,ImgUrl,CategoryId,UId")] Book book, IFormFile image)
         {
-          /*  if (id != book.Isbn)
+            if (id != book.Isbn)
             {
                 return NotFound();
-            }*/
-            if (image == null)
+            }
+            if (image != null)
+            {
+                string imgName = book.Isbn + Path.GetExtension(image.FileName);
+                string savePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", imgName);
+                using (var stream = new FileStream(savePath, FileMode.Create))
+                {
+                    image.CopyTo(stream);
+                }
+                book.ImgUrl = imgName;
+            }
+
+            else
             {
                 Book thisProduct = _context.Books.Where(p => p.Isbn == book.Isbn).AsNoTracking().FirstOrDefault();
                 book.ImgUrl = thisProduct.ImgUrl;

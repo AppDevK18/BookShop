@@ -10145,24 +10145,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ozer\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\minh ngo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\BookShop.csproj",
+      "projectUniqueName": "C:\\Users\\minh ngo\\Desktop\\BookShop\\BookShop\\BookShop.csproj",
       "projectName": "BookShop",
-      "projectPath": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\BookShop.csproj",
-      "packagesPath": "C:\\Users\\Ozer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ozer\\Desktop\\BookShop\\BookShop\\obj\\",
+      "projectPath": "C:\\Users\\minh ngo\\Desktop\\BookShop\\BookShop\\BookShop.csproj",
+      "packagesPath": "C:\\Users\\minh ngo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\minh ngo\\Desktop\\BookShop\\BookShop\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ozer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\minh ngo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

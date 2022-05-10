@@ -120,6 +120,11 @@ namespace BookShop.Areas.Identity.Pages.Account
             [Display(Name = "Phone Number")]
             public String PhoneNumber { get; set; }
 
+            [Required]
+            [DataType(DataType.DateTime)]
+            [Display(Name = "Date Of Birth")]
+            public DateTime DoB { get; set; }
+
         }
 
 
@@ -138,7 +143,7 @@ namespace BookShop.Areas.Identity.Pages.Account
                 var user = CreateUser();
                 user.Address = Input.Address;
                 user.PhoneNumber = Input.PhoneNumber;
-
+                user.DoB = Input.DoB;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

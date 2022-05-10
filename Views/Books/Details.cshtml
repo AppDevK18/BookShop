@@ -13,9 +13,9 @@
 				<!-- ảnh  -->
 				<div class="col-md-5 khoianh">
 					<div class="anhto mb-4">
-						
-							<img class="product-image" src="@("~/img/" + Model.ImgUrl)" asp-append-version="true" style="width: 100%;">
-						
+
+						<img class="product-image" src="@("~/img/" + Model.ImgUrl)" asp-append-version="true" style="width: 100%;">
+
 					</div>
 
 				</div>
@@ -52,25 +52,30 @@
 						<dd class="col-sm-10">
 							@Html.DisplayFor(model => model.Desc)
 						</dd>
-						
-						
 						<dt class="col-sm-2">
 							@Html.DisplayNameFor(model => model.Category)
 						</dt>
 						<dd class="col-sm-10">
 							@Html.DisplayFor(model => model.Category.Name)
 						</dd>
-						
-						<a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@Model.Isbn" class="btn btn-primary">Add to cart</a>
-						
+
+						<p class="col-sm-2">
+						Seller: @Model.User.UserName 
+						Phone: @Model.User.PhoneNumber
+						</p>
+
 					</dl>
 
 					
+
+
+					<a asp-action="AddToCart" asp-controller="Carts" asp-route-isbn="@Model.Isbn" class="btn btn-primary">Add to cart</a>
+
 				</div>
 			</div>
 
 
 		</div>
 	</div>
-	
+
 </section>

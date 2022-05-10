@@ -41,7 +41,8 @@
 									<img class="card-img-top anh" src="@("~/img/" + book.ImgUrl)" asp-append-version="true" class="card-img-top">
 									<div class="card-body noidungsp mt-3">
 										<h6 class="card-title ten">@book.Title</h6>
-										<small class="tacgia text-muted">@book.Author</small>
+										<small class="tacgia text-muted">category: @book.Category.Name</small>
+										<small class="tacgia text-muted">author: @book.Author</small>
 										<div class="gia d-flex align-items-baseline">
 											<div class="giamoi">@book.Price ₫</div>
 										</div>

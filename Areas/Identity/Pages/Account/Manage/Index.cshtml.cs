@@ -65,6 +65,12 @@ namespace BookShop.Areas.Identity.Pages.Account.Manage
             [DataType(DataType.Text)]
             [Display(Name = "Address")]
             public String? Address { get; set; }
+
+            [Required]
+            [DataType(DataType.DateTime)]
+            [Display(Name = "Date Of Birth")]
+            public DateTime DoB { get; set; }
+
         }
 
         private async Task LoadAsync(BookShopUser user)
@@ -77,7 +83,9 @@ namespace BookShop.Areas.Identity.Pages.Account.Manage
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber,
-                 Address = user.Address
+                Address = user.Address,
+                DoB = (DateTime)user.DoB,
+
             };
         }
 
@@ -121,6 +129,12 @@ namespace BookShop.Areas.Identity.Pages.Account.Manage
             if (Input.Address != user.Address)
             {
                 user.Address = Input.Address;
+            }
+
+
+            if (Input.DoB != user.DoB)
+            {
+                user.DoB = Input.DoB;
             }
 
             await _userManager.UpdateAsync(user);
