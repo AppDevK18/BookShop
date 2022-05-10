@@ -41,12 +41,12 @@ namespace BookShop.Areas.Seller.Controllers
 						select b;
 
 			ViewBag.CurrentPage = id;
-/*
+
             if (StringSearch == null)
 
             {
                 return View(books);
-            }*/
+            }
 
             if (categoryInt != 0)
             {
@@ -179,17 +179,10 @@ namespace BookShop.Areas.Seller.Controllers
             }*/
             if (image == null)
             {
-
-
                 Book thisProduct = _context.Books.Where(p => p.Isbn == book.Isbn).AsNoTracking().FirstOrDefault();
                 book.ImgUrl = thisProduct.ImgUrl;
             }
 
-
-            else
-            {
-                
-            }
             var userid = _userManager.GetUserId(HttpContext.User);
             if (ModelState.IsValid)
             {
@@ -217,38 +210,7 @@ namespace BookShop.Areas.Seller.Controllers
             ViewData["Id"] = new SelectList(_context.Users.Where(c => c.Id == userid), "Id", "UserName", book.Isbn);
 
             return View(book);
-        }
-
-        // GET: Seller/Books/Delete/5
-        public async Task<IActionResult> Delete(string id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var book = await _context.Books
-                .Include(b => b.Category)
-                .Include(b => b.User)
-                .FirstOrDefaultAsync(m => m.Isbn == id);
-            if (book == null)
-            {
-                return NotFound();
-            }
-
-            return View(book);
-        }
-
-        // POST: Seller/Books/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
-            var book = await _context.Books.FindAsync(id);
-            _context.Books.Remove(book);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        }       
 
         private bool BookExists(string id)
         {

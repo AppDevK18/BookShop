@@ -558,4 +558,4 @@ C:\Users\minh ngo\Desktop\BookShop\BookShop\obj\Debug\net6.0\BookShop.genruntime
 C:\Users\minh ngo\Desktop\BookShop\BookShop\obj\Debug\net6.0\ref\BookShop.dll
 C:\Users\minh ngo\Desktop\BookShop\BookShop\obj\Debug\net6.0\scopedcss\Areas\Seller\Views\Shared\_tLayoutSeller.cshtml.rz.scp.css
 C:\Users\Ozer\Desktop\BookShop\BookShop\obj\Debug\net6.0\scopedcss\Areas\Seller\Views\Shared\_tLayoutSeller.cshtml.rz.scp.css
-C:\Users\Ozer\Desktop\BookShop\BookShop\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout - Copy.cshtml.rz.scp.css
+C:\Users\Ozer\Desktop\BookShop\BookShop\obj\Debug\net6.0\scopedcss\Views\Shared\_BlankLayout.cshtml.rz.scp.css

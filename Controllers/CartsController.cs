@@ -43,7 +43,12 @@ namespace BookShop.Controllers
             var userCart = await _context.Books
                    .FindAsync(isbn);
 
+            if (thisUserId == null)
+            {
+                return RedirectToAction("BackToLogin", "Carts"/*, new { area ="" }*/);
 
+            }
+            else {
             Cart myCart = new Cart()
             {
                 UId = thisUserId,
@@ -58,6 +63,8 @@ namespace BookShop.Controllers
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction("Index");
+            }
+
         }
 
         public async Task<IActionResult> Checkout()

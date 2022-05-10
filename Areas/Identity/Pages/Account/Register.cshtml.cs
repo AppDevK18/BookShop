@@ -112,8 +112,13 @@ namespace BookShop.Areas.Identity.Pages.Account
 
             [Required]
             [DataType(DataType.Text)]
-            [Display(Name = "Địa chỉ")]
+            [Display(Name = "Address")]
             public String Address { get; set; }
+
+            [Required]
+            [DataType(DataType.PhoneNumber)]
+            [Display(Name = "Phone Number")]
+            public String PhoneNumber { get; set; }
 
         }
 
@@ -132,6 +137,8 @@ namespace BookShop.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
                 user.Address = Input.Address;
+                user.PhoneNumber = Input.PhoneNumber;
+
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
